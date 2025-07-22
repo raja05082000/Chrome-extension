@@ -1,6 +1,26 @@
 <div class="container">
-<h2>User List</h2>
-<div class="users-list">
-<app-user-item *ngFor="let user of users" [user]="user"></app-user-item>
+  <h2>User List</h2>
+  <div class="users-list">
+    <app-user-item
+      *ngFor="let user of users"
+      [user]="user"
+      (editUser)="onEditUser($event)"
+      (deleteUser)="onDeleteUser($event)">
+    </app-user-item>
+  </div>
 </div>
+
+
+<div class="modal" *ngIf="editingUser">
+  <div class="modal-content">
+    <h3>Edit User</h3>
+    <label>Name:</label>
+    <input [(ngModel)]="editingUser.name" />
+    <label>Email:</label>
+    <input [(ngModel)]="editingUser.email" />
+    <div class="modal-buttons">
+      <button (click)="saveEdit()">Update</button>
+      <button (click)="cancelEdit()">Cancel</button>
+    </div>
+  </div>
 </div>
