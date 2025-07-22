@@ -1,0 +1,16 @@
+<div class="add-user-container">
+  <h2>Add New User</h2>
+  
+ 
+  <label for="name">Name:</label>
+  <input id="name" [(ngModel)]="newName" name="name" placeholder="Enter name" />
+  <div class="error" *ngIf="submitted && !newName">Name is required</div><br />
+
+ 
+  <label for="email">Email:</label>
+  <input id="email" [(ngModel)]="newEmail" name="email" placeholder="Enter email" />
+  <div class="error" *ngIf="submitted && !newEmail">Email is required</div><br />
+
+ 
+  <button (click)="addUser()">Add User</button>
+</div>
