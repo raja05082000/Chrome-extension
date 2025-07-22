@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Contact Us:</h2>
+    <form (submit)="onSubmit()">
+        <div class="form-group">
+      <label>Name:</label>
+      <input [(ngModel)]="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+      <label>Email:</label>
+      <input [(ngModel)]="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+      <label>Message:</label>
+      <input [(ngModel)]="message" name="message" required />
+        </div>
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
